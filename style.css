@@ -1,0 +1,33 @@
+body {
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+ol{
+    margin-left: 45%;
+    margin-right: 50%;
+}
+li {
+    background-color: purple;
+    width: 60px;
+    margin-bottom: 2px;
+    border-radius: 10px;
+}
+
+.startPage{
+    display: block;
+}
+
+.questionsPage{
+    display: none;
+}
+
+.resultsPage{
+    display: none;
+}
+
+.countdown{
+    position: static;
+    bottom: 0;
+    right: 0;
+}
