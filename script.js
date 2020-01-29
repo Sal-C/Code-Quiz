@@ -4,8 +4,11 @@ var timer = document.getElementById('countdown');
 var startPage= document.querySelector('.startPage');
 var questionsPage= document.querySelector('.questionsPage');
 var resultsPage= document.querySelector('.resultsPage');
+var scoreboard = document.querySelector(".scoreboard");
 var response = document.querySelector('ol');
 var scoreDisplay = document.querySelector('#score');
+var submitScore = document.querySelector('#submitScore')
+var restartButton = document.querySelector('#restart');
 //questions
 var questions = [
   {
@@ -15,22 +18,22 @@ var questions = [
   },
   {
     title: "The condition in an if / else statement is enclosed within ____.",
-    choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
+    choices: ["Quotes", "Curly Brackets", "Parentheses", "Square Brackets"],
     answer: "parentheses"
   },
   {
     title: "Arrays in JavaScript can be used to store ____.",
-    choices: ["strings", "other arrays", "booleans", "all of the above"],
+    choices: ["Strings", "Other Arrays", "Booleans", "All of the Above"],
     answer: "aota"
   },
   {
     title: "String values must be enclosed within ____ when assigned to variables.",
-    choices: ["quotes", "curly brackets", "commas", "parentheses"],
+    choices: ["Quotes", "Curly Brackets", "Commas", "Parentheses"],
     answer: "quotes"
   },
   {
-    title: "Which of the following is not an operator.",
-    choices: ["add", "sub", "del", "yikes"],
+    title: "A very useful tool during development and debugging for printing content to the debugger is:",
+    choices: ["JavaScript", "console.log", "terminal", "for loops"],
     answer: "quotes"
   }
   
@@ -48,7 +51,7 @@ var timeLeft = 75;
 var score =0;
 
 function setScore() {
-  scoreDisplay.textContent = score;
+  scoreDisplay.textContent = 'Score: '+score;
 }
 
 function startTimer() {
@@ -58,7 +61,7 @@ function startTimer() {
   
 
   var timeInterval = setInterval(function() {
-    timer.textContent = timeLeft + " seconds remaining";
+    timer.textContent = "Time: " + timeLeft;
     timeLeft--;
 
     if (timeLeft === 0) {
@@ -134,5 +137,35 @@ function correct(){
 }
 
 function wrong(){
-  
+  timeLeft--
+  timeLeft--
+  timeLeft--
+  timeLeft--
+  timeLeft--
+  timeLeft--
+  timeLeft--
+  timeLeft--
+  timeLeft--
+  timeLeft--
+  timeLeft--
+  timeLeft--
+  timeLeft--
+  timeLeft--
+  timeLeft--
 }
+
+submitScore.addEventListener('click', function(event){
+  event.preventDefault();
+  timeLeft = 0;
+  resultsPage.style.display='none';
+  scoreboard.style.display='block';
+  restartButton.style.display='block';
+  var storedScore = document.createElement("p");
+  storedScore.textContent = "Initials: " + document.getElementById("scoreInitials").value + " | Score: " + score;
+  document.querySelector(".scoreboard").appendChild(storedScore);
+  
+})
+
+restartButton.addEventListener('click', function(){
+  location.reload();
+})

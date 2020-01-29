@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
     <div class="startPage">
@@ -18,10 +19,10 @@
 
         <h2 id='question'>Commonly used data types DO NOT include:</h2>
         <ol>
-            <li id='a1' class='f' onclick="wrong()">Strings</li>
-            <li id='a2' class='f' onclick="wrong()">Booleans</li>
-            <li id='a3' class='t'onclick="correct()">Alerts</li>
-            <li id='a4' class='f' onclick="wrong()">Integer</li>
+            <li id='a1' onclick="wrong()">Strings</li>
+            <li id='a2' onclick="wrong()">Booleans</li>
+            <li id='a3' onclick="correct()">Alerts</li>
+            <li id='a4' onclick="wrong()">Integer</li>
         </ol>
         <p id='score'>Score: 0</p>
         <p id="countdown"></div> 
@@ -29,8 +30,18 @@
 
     <div class="resultsPage">
         <h1 id='complete'>Time's Up!</h1>
+        <p>Final score:</p>
         <p id='finalScore'></p>
+        <form>
+            Initials:
+            <input id="scoreInitials" type="text" value="">
+            <input id="submitScore" type="submit">
+        </form>
     </div>
+    <div class="scoreboard">
+        <h3>Scoreboard</h3>  
+    </div>
+    <input id="restart" type="submit" value="Restart">
 
 
 <script src="script.js"></script>
